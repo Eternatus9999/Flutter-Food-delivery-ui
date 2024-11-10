@@ -43,11 +43,60 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(),
             Container(
               margin: EdgeInsets.all(50),
-              child: Row(
-
+              child: Center(
+                child: Row(
+                    children: <Widget>[
+                      Expanded(
+                          child: TextButton(
+                              style:TextButton.styleFrom(
+                                backgroundColor: Colors.black,
+                                padding: EdgeInsets.all(6),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                              ),
+                              onPressed: onPressed, child: Text("Delivery",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 24.0,
+                                  fontWeight: FontWeight.bold
+                              )))
+                      ) ,
+                      const SizedBox(width: 10)
+                      ,
+                      Expanded(
+                          child: TextButton(
+                              style:TextButton.styleFrom(
+                                backgroundColor: Colors.grey,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                              ),
+                              onPressed: onPressed, child: Text("Pickup",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 24.0,
+                                  fontWeight: FontWeight.bold
+                              )))
+                      )
+                    ]
+                )
               )
             ),
-            Container(),
+            Container(
+              child: IconButton(
+                splashRadius: 100,
+                iconSize: 200,
+                icon: Ink.image(
+                  image: AssetImage(
+                      '../Assets/pizza_icon.png'),
+                ),
+                onPressed: () {
+                  // do something when the button is pressed
+                  debugPrint('Hi there');
+                },
+              ),
+            ),
             Container(),
             Container(),
           ],
