@@ -40,9 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Column(
           children: [
-            Container(),
             Container(
-              margin: EdgeInsets.all(50),
+              margin: EdgeInsets.only(top: 50, left: 50, right: 50, bottom: 10),
               child: Center(
                 child: Row(
                     children: <Widget>[
@@ -84,21 +83,51 @@ class _MyHomePageState extends State<MyHomePage> {
               )
             ),
             Container(
-              child: IconButton(
-                splashRadius: 100,
-                iconSize: 200,
-                icon: Ink.image(
-                  image: AssetImage(
-                      '../Assets/pizza_icon.png'),
+              margin: EdgeInsets.only(left:60, right: 50),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                      child: Text("Location",
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold
+                        ),)
+                  ),
+
+                  Expanded(
+                      child: Text("Panadura",
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold
+                      ),)
+                  ),
+                  Expanded(
+                      child: Text("Drop down",
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold
+                        ),)
+                  )
+                ],
+              )
+            ),
+            Container(
+              margin: EdgeInsets.all(30),
+              child: TextField(
+                style: TextStyle(
+                  fontSize: 20.0,
                 ),
-                onPressed: () {
-                  // do something when the button is pressed
-                  debugPrint('Hi there');
-                },
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.grey,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  hintText: '  🔍 Search here..',
+                ),
               ),
             ),
-            Container(),
-            Container(),
+            Container()
           ],
       ),
     );
