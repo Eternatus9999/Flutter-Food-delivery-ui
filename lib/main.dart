@@ -128,84 +128,161 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-              child: Card(
-                elevation: 12,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                color: Colors.black,
-                child: Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: const BorderRadius.only(
-                        topRight: Radius.circular(20),
-                        topLeft: Radius.circular(20),
+              color: Colors.grey,
+              child: Column(
+                children: [
+                  Container(
+                    child: Card(
+                      elevation: 12,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
                       ),
-                      child: Image.asset(
-                        'assets/burger.png',
-                        height: 200,
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                      ),
-                    ),
-                    const ListTile(
-                      title: Text(
-                        'Melbourne Cricket Stadium',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      subtitle: Text(
-                        'Australia',
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                        padding:
-                        EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: TextButton(
-                                style: TextButton.styleFrom(
-                                    backgroundColor: Colors.white),
-                                onPressed: () {},
-                                child: const Text(
-                                  "Edit",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: const BorderRadius.only(
+                              topRight: Radius.circular(20),
+                              topLeft: Radius.circular(20),
+                            ),
+                            child: Image.asset(
+                              'assets/burger.png',
+                              height: 220,
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                            ),
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Expanded(
+                                child:  const ListTile(
+                                  title: Text(
+                                    "McDonald's",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 25.0,
+                                        fontWeight: FontWeight.bold
+                                    ),
                                   ),
+                                  subtitle: Row(
+                                    children: <Widget>[
+                                      Expanded(
+                                          child: Text(
+                                            "\$ 29.00",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 20.0
+                                            ),
+                                          ),
+                                      ),
+                                      Expanded(
+                                          child: Text("·25-35 min",
+                                            style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 16.0
+                                            ),
+                                          ),
+                                      )
+                                    ],
+                                  )
                                 ),
                               ),
+                              Expanded(
+                                  child: Container(
+                                    margin: EdgeInsets.only(left:130, top: 0),
+                                    child: Text("⭐4.9",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+                                  )
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: Card(
+                      elevation: 12,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      color: Colors.white,
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: const BorderRadius.only(
+                              topRight: Radius.circular(20),
+                              topLeft: Radius.circular(20),
                             ),
-                            SizedBox(
-                              width: 20,
+                            child: Image.asset(
+                              'assets/burger.png',
+                              height: 220,
+                              fit: BoxFit.cover,
+                              width: double.infinity,
                             ),
-                            Expanded(
-                              child: TextButton(
-                                style: TextButton.styleFrom(
-                                    backgroundColor: Colors.red),
-                                onPressed: () {},
-                                child: const Text(
-                                  "Delete",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w300,
-                                  ),
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Expanded(
+                                child:  const ListTile(
+                                    title: Text(
+                                      "McDonald's",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 25.0,
+                                          fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+                                    subtitle: Row(
+                                      children: <Widget>[
+                                        Expanded(
+                                          child: Text(
+                                            "\$ 29.00",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 20.0
+                                            ),
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Text("·25-35 min",
+                                            style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 16.0
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    )
                                 ),
                               ),
-                            ),
-                          ],
-                        ))
-                  ],
-                ),
-              ),
-            )
+                              Expanded(
+                                  child: Container(
+                                    margin: EdgeInsets.only(left:130, top: 0),
+                                    child: Text("⭐4.9",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+                                  )
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ),
+            Container()
           ],
       ),
     );
