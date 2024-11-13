@@ -38,7 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: SingleChildScrollView(
+        child: Column(
           children: [
             Container(
               margin: EdgeInsets.only(top: 50, left: 50, right: 50, bottom: 10),
@@ -119,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: Colors.grey,
+                  fillColor: Color.fromARGB(255, 255, 255, 100),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -128,6 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
+              margin: EdgeInsets.only(left:10,right: 10,bottom: 10),
               color: Colors.grey,
               child: Column(
                 children: [
@@ -179,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           child: Text("·25-35 min",
                                             style: TextStyle(
                                                 color: Colors.grey,
-                                                fontSize: 16.0
+                                                fontSize: 15.0
                                             ),
                                           ),
                                       )
@@ -206,6 +208,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   Container(
+                    margin: EdgeInsets.only(top:20),
                     child: Card(
                       elevation: 12,
                       shape: RoundedRectangleBorder(
@@ -253,7 +256,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           child: Text("·25-35 min",
                                             style: TextStyle(
                                                 color: Colors.grey,
-                                                fontSize: 16.0
+                                                fontSize: 15.0
                                             ),
                                           ),
                                         )
@@ -285,6 +288,6 @@ class _MyHomePageState extends State<MyHomePage> {
             Container()
           ],
       ),
-    );
+    ));
   }
 }
