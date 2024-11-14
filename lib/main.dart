@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -17,8 +18,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: const Pepparoni(),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const Pepparoni(),
     );
   }
 }
@@ -39,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Container(
           child: ListView(
             children: [
@@ -295,7 +297,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Container(
                         child: GestureDetector(
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const Olive()),
+                            );
+                          },
                           child: Card(
                             margin: EdgeInsets.only(left:10,right: 10, top: 20, bottom: 10),
                             elevation: 12,
@@ -403,6 +410,17 @@ class Pepparoni extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Container(
+        padding: EdgeInsets.zero,
+        margin: EdgeInsets.only(left: 30,right:300, top: 50),
+        alignment: Alignment.topLeft,
+        child: FloatingActionButton(
+            backgroundColor: Colors.white,
+            child: Icon(Icons.arrow_back,color: Colors.black),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
+      ),
       body: Container(
         child: ListView(
           children: [
@@ -413,6 +431,7 @@ class Pepparoni extends StatelessWidget {
                 fit: BoxFit.cover,
                 width: double.infinity,
                 ),
+
             ),
             Container(
               margin: EdgeInsets.only(left: 10),
@@ -456,10 +475,10 @@ class Pepparoni extends StatelessWidget {
               )
             ),
             Container(
-              margin: EdgeInsets.all(20),
+              margin: EdgeInsets.only(left:20, top:20),
                 child: Text("Topings:",
                   style: TextStyle(
-                      fontSize: 30
+                      fontSize: 25
                   ),)
             ),
             Container(
@@ -497,7 +516,9 @@ class Pepparoni extends StatelessWidget {
                       child: TextButton(
                         style: TextButton.styleFrom(
                             backgroundColor: Colors.green),
-                        onPressed: () {},
+                        onPressed: () {
+
+                        },
                         child: const Text(
                           "Add to Cart",
                           style: TextStyle(
@@ -514,6 +535,142 @@ class Pepparoni extends StatelessWidget {
             )
           ],
         )
+      ),
+    );
+  }
+}
+
+class Olive extends StatelessWidget {
+  const Olive({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      floatingActionButton: Container(
+        padding: EdgeInsets.zero,
+        margin: EdgeInsets.only(left: 30,right:300, top: 50),
+        alignment: Alignment.topLeft,
+        child: FloatingActionButton(
+            backgroundColor: Colors.white,
+            child: Icon(Icons.arrow_back,color: Colors.black),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
+      ),
+      body: Container(
+          child: ListView(
+            children: [
+              Container(
+                child: Image.asset(
+                  'assets/pizza_2.png',
+                  height: 220,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                ),
+
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                child: Text(
+                  "Olive + Cheese Pizza",
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                child: Text(
+                  "Famouse Olive pizza from Itali",
+                  style: TextStyle(
+                      fontSize: 20
+                  ),
+                ),
+              ),
+              Container(
+                  margin: EdgeInsets.only(left: 10),
+                  child: Row(
+                    children: <Widget>[
+                      const SizedBox(width: 10),
+                      Expanded(
+                          child: Text(
+                            "🕒 35 - 45 min - delivery",
+                            style: TextStyle(
+                                fontSize: 15
+                            ),
+                          )
+                      ),
+                      Expanded(
+                          child: Text("3.5 ⭐ (200+) 5.9\$ Fee",
+                            style: TextStyle(
+                                fontSize: 18
+                            ),)
+                      ),
+                    ],
+                  )
+              ),
+              Container(
+                  margin: EdgeInsets.only(left:20, top:20),
+                  child: Text("Topings:",
+                    style: TextStyle(
+                        fontSize: 25
+                    ),)
+              ),
+              Container(
+                  margin: EdgeInsets.only(left:40, top: 1),
+                  child: Text("mozzarella cheese, olive, pepper, bellpepper, onion",
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black54
+                    ),)
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 20, right: 20, top: 50),
+                child: Card(
+                  elevation: 12,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  color: Colors.black,
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: const BorderRadius.only(
+                          topRight: Radius.circular(20),
+                          topLeft: Radius.circular(20),
+                        ),
+                        child: Image.asset(
+                          'assets/cart.jpg',
+                          height: 200,
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        child: TextButton(
+                          style: TextButton.styleFrom(
+                              backgroundColor: Colors.green),
+                          onPressed: () {
+
+                          },
+                          child: const Text(
+                            "Add to Cart",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
+          )
       ),
     );
   }
