@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       borderSide: BorderSide.none,
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                    hintText: 'Search here..',
+                    hintText: '⌕ Search here..',
                   ),
                 ),
               ),
