@@ -46,39 +46,44 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Center(
                       child: Row(
                           children: <Widget>[
+                            const SizedBox(width: 30),
                             Expanded(
                                 child: TextButton(
                                     style:TextButton.styleFrom(
                                       backgroundColor: Colors.black,
-                                      padding: EdgeInsets.all(6),
+                                      padding: EdgeInsets.zero,
                                       shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(4.0),
+                                        borderRadius: BorderRadius.circular(8.0),
                                       ),
                                     ),
-                                    onPressed: onPressed, child: Text("Delivery",
+                                    onPressed: onPressed,
+                                    child: Text("Delivery",
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 24.0,
+                                        fontSize: 20.0,
                                         fontWeight: FontWeight.bold
                                     )))
                             ) ,
-                            const SizedBox(width: 10)
+                            const SizedBox(width: 30)
                             ,
                             Expanded(
                                 child: TextButton(
                                     style:TextButton.styleFrom(
+                                      padding: EdgeInsets.zero,
                                       backgroundColor: Color.fromRGBO(200, 200, 200, 100),
                                       shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(4.0),
+                                        borderRadius: BorderRadius.circular(8.0),
                                       ),
                                     ),
-                                    onPressed: onPressed, child: Text("Pickup",
+                                    onPressed: onPressed,
+                                    child: Text("Pickup",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 24.0,
+                                        fontSize: 20.0,
                                         fontWeight: FontWeight.bold
                                     )))
-                            )
+                            ),
+                            const SizedBox(width: 30)
                           ]
                       )
                   )
