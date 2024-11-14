@@ -340,7 +340,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             children: <Widget>[
                                               Expanded(
                                                 child: Text(
-                                                  "\$ 40.00",
+                                                  "\$ 20.00",
                                                   style: TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 20.0
@@ -412,7 +412,7 @@ class Pepparoni extends StatelessWidget {
     return Scaffold(
       floatingActionButton: Container(
         padding: EdgeInsets.zero,
-        margin: EdgeInsets.only(left: 30,right:300, top: 50),
+        margin: EdgeInsets.only(left: 30,right:300, top: 120),
         alignment: Alignment.topLeft,
         child: FloatingActionButton(
             backgroundColor: Colors.white,
@@ -505,7 +505,7 @@ class Pepparoni extends StatelessWidget {
                         topLeft: Radius.circular(20),
                       ),
                       child: Image.asset(
-                        'assets/burger.png',
+                        'assets/pizza.png',
                         height: 200,
                         fit: BoxFit.cover,
                         width: double.infinity,
@@ -536,6 +536,22 @@ class Pepparoni extends StatelessWidget {
           ],
         )
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.delivery_dining_sharp),
+            label: 'Orders',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Account',
+          ),
+        ],
+      ),
     );
   }
 }
@@ -548,7 +564,7 @@ class Olive extends StatelessWidget {
     return Scaffold(
       floatingActionButton: Container(
         padding: EdgeInsets.zero,
-        margin: EdgeInsets.only(left: 30,right:300, top: 50),
+        margin: EdgeInsets.only(left: 30,right:300, top: 120),
         alignment: Alignment.topLeft,
         child: FloatingActionButton(
             backgroundColor: Colors.white,
@@ -641,7 +657,7 @@ class Olive extends StatelessWidget {
                           topLeft: Radius.circular(20),
                         ),
                         child: Image.asset(
-                          'assets/cart.jpg',
+                          'assets/pizza_2.png',
                           height: 200,
                           fit: BoxFit.cover,
                           width: double.infinity,
@@ -671,6 +687,22 @@ class Olive extends StatelessWidget {
               )
             ],
           )
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.delivery_dining_sharp),
+            label: 'Orders',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Account',
+          ),
+        ],
       ),
     );
   }
