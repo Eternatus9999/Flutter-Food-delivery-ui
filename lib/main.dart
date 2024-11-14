@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          child: Column(
+          child: ListView(
             children: [
               Container(
                   margin: EdgeInsets.only(top: 50, left: 50, right: 50, bottom: 10),
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             Expanded(
                                 child: TextButton(
                                     style:TextButton.styleFrom(
-                                      backgroundColor: Colors.grey,
+                                      backgroundColor: Color.fromRGBO(200, 200, 200, 100),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(4.0),
                                       ),
@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Color.fromRGBO(225, 225, 225, 100),
+                    fillColor: Color.fromRGBO(200, 200, 200, 100),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -129,11 +129,67 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Container(
-                  color: Colors.grey,
+                margin: EdgeInsets.only(bottom: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                          child: IconButton(
+                            splashRadius: 10,
+                            iconSize: 10,
+                            icon: Image.asset(
+                                  'assets/pizza_icon.png'
+                            ),
+                            onPressed: () {
+                              // do something when the button is pressed debugPrint('Hi there');
+                            },
+                          )
+                      ),
+                      Expanded(
+                          child: IconButton(
+                            splashRadius: 100,
+                            iconSize: 100,
+                            icon: Image.asset(
+                                'assets/pizza_icon.png'
+                            ),
+                            onPressed: () {
+                              // do something when the button is pressed debugPrint('Hi there');
+                            },
+                          )
+                      ),
+                      Expanded(
+                          child: IconButton(
+                            splashRadius: 100,
+                            iconSize: 100,
+                            icon: Image.asset(
+                                'assets/pizza_icon.png'
+                            ),
+                            onPressed: () {
+                              // do something when the button is pressed debugPrint('Hi there');
+                            },
+                          )
+                      ),
+                      Expanded(
+                          child: IconButton(
+                            splashRadius: 100,
+                            iconSize: 100,
+                            icon: Image.asset(
+                                'assets/pizza_icon.png'
+                            ),
+                            onPressed: () {
+                              // do something when the button is pressed debugPrint('Hi there');
+                            },
+                          )
+                      )
+                    ],
+                  ),
+              ),
+              Container(
+                  color: Color.fromRGBO(200, 200, 200, 100),
                   child: Column(
                     children: [
                       Container(
                         child: Card(
+                          margin: EdgeInsets.only(left:10,right: 10, top: 20),
                           elevation: 12,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20.0),
@@ -208,6 +264,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Container(
                         child: Card(
+                          margin: EdgeInsets.only(left:10,right: 10, top: 20, bottom: 10),
                           elevation: 12,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20.0),
@@ -283,7 +340,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   )
               ),
-              Container()
             ],
           ),
         ),
