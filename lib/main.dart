@@ -93,13 +93,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Row(
                     children: <Widget>[
                       Expanded(
-                          child: Text("Location",
-                            style: TextStyle(
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold
-                            ),)
+                          child: Icon(Icons.location_on,
+                          color: Colors.green,)
                       ),
-
                       Expanded(
                           child: Text("Panadura",
                             style: TextStyle(
