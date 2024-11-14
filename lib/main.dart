@@ -36,6 +36,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   get onPressed => null;
 
+  get onChanged => null;
+
+  String _dropdownvalue = "Panadura";
 
   @override
   Widget build(BuildContext context) {
@@ -92,26 +95,34 @@ class _MyHomePageState extends State<MyHomePage> {
                   )
               ),
               Container(
-                  margin: EdgeInsets.only(left:60, right: 50),
+                  margin: EdgeInsets.only(left:20, right: 50),
                   child: Row(
                     children: <Widget>[
                       Expanded(
-                          child: Icon(Icons.location_on,
-                          color: Colors.green,)
+                        child: Icon(
+                          Icons.location_on,
+                          color: Colors.green,
+                        ),
                       ),
                       Expanded(
-                          child: Text("Panadura",
-                            style: TextStyle(
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold
-                            ),)
-                      ),
-                      Expanded(
-                          child: Text("Drop down",
-                            style: TextStyle(
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold
-                            ),)
+                          child: DropdownButton(
+                              items: const[
+                                DropdownMenuItem(child: Text("Panadura"), value: "Panadura",),
+                                DropdownMenuItem(child: Text("Colombo"), value: "Colombo",),
+                                DropdownMenuItem(child: Text("Galle"), value: "Galle",),
+                                DropdownMenuItem(child: Text("Gampaha"), value: "Gampaha",),
+                                DropdownMenuItem(child: Text("Nuwara Eliya"), value: "Nuwara Eliya",),
+                              ],
+                              value: _dropdownvalue,
+                              isExpanded: true,
+                              onChanged: (String? selectedbvalue){
+                                if(selectedbvalue is String){
+                                  setState(() {
+                                    this._dropdownvalue = selectedbvalue;
+                                  });
+                                }
+                              }
+                          )
                       )
                     ],
                   )
