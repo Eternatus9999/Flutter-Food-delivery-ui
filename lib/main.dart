@@ -122,9 +122,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     filled: true,
                     fillColor: Color.fromRGBO(200, 200, 200, 100),
                     border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                    hintText: '  🔍 Search here..',
+                    hintText: 'Search here..',
                   ),
                 ),
               ),
@@ -133,51 +134,71 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Row(
                     children: <Widget>[
                       Expanded(
-                          child: IconButton(
-                            splashRadius: 10,
-                            iconSize: 10,
-                            icon: Image.asset(
-                                  'assets/pizza_icon.png'
-                            ),
-                            onPressed: () {
-                              // do something when the button is pressed debugPrint('Hi there');
-                            },
+                          child: Column(
+                            children: [
+                              IconButton(
+                                splashRadius: 10,
+                                iconSize: 10,
+                                icon: Image.asset(
+                                    'assets/deals_icon.png'
+                                ),
+                                onPressed: () {
+                                  // do something when the button is pressed debugPrint('Hi there');
+                                },
+                              ),
+                              Text("Deals")
+                            ],
                           )
                       ),
                       Expanded(
-                          child: IconButton(
-                            splashRadius: 100,
-                            iconSize: 100,
-                            icon: Image.asset(
-                                'assets/pizza_icon.png'
-                            ),
-                            onPressed: () {
-                              // do something when the button is pressed debugPrint('Hi there');
-                            },
+                          child: Column(
+                            children: [
+                              IconButton(
+                                splashRadius: 100,
+                                iconSize: 100,
+                                icon: Image.asset(
+                                    'assets/top_eats_icon.png'
+                                ),
+                                onPressed: () {
+                                  // do something when the button is pressed debugPrint('Hi there');
+                                },
+                              ),
+                              Text("Top eats")
+                            ],
                           )
                       ),
                       Expanded(
-                          child: IconButton(
-                            splashRadius: 100,
-                            iconSize: 100,
-                            icon: Image.asset(
-                                'assets/pizza_icon.png'
-                            ),
-                            onPressed: () {
-                              // do something when the button is pressed debugPrint('Hi there');
-                            },
+                          child: Column(
+                            children: [
+                              IconButton(
+                                splashRadius: 100,
+                                iconSize: 100,
+                                icon: Image.asset(
+                                    'assets/rewords_icon.png'
+                                ),
+                                onPressed: () {
+                                  // do something when the button is pressed debugPrint('Hi there');
+                                },
+                              ),
+                              Text("Rewards")
+                            ],
                           )
                       ),
                       Expanded(
-                          child: IconButton(
-                            splashRadius: 100,
-                            iconSize: 100,
-                            icon: Image.asset(
-                                'assets/pizza_icon.png'
-                            ),
-                            onPressed: () {
-                              // do something when the button is pressed debugPrint('Hi there');
-                            },
+                          child: Column(
+                            children: [
+                              IconButton(
+                                splashRadius: 100,
+                                iconSize: 100,
+                                icon: Image.asset(
+                                    'assets/pizza_icon.png'
+                                ),
+                                onPressed: () {
+                                  // do something when the button is pressed debugPrint('Hi there');
+                                },
+                              ),
+                              Text("Pizza")
+                            ],
                           )
                       )
                     ],
@@ -203,7 +224,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   topLeft: Radius.circular(20),
                                 ),
                                 child: Image.asset(
-                                  'assets/burger.png',
+                                  'assets/pizza.png',
                                   height: 220,
                                   fit: BoxFit.cover,
                                   width: double.infinity,
@@ -214,7 +235,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Expanded(
                                     child:  const ListTile(
                                         title: Text(
-                                          "McDonald's",
+                                          "Pepparoni",
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 25.0,
@@ -225,7 +246,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           children: <Widget>[
                                             Expanded(
                                               child: Text(
-                                                "\$ 29.00",
+                                                "\$ 15.00",
                                                 style: TextStyle(
                                                     color: Colors.black,
                                                     fontSize: 20.0
@@ -278,7 +299,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   topLeft: Radius.circular(20),
                                 ),
                                 child: Image.asset(
-                                  'assets/burger.png',
+                                  'assets/pizza_2.png',
                                   height: 220,
                                   fit: BoxFit.cover,
                                   width: double.infinity,
@@ -289,10 +310,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Expanded(
                                     child:  const ListTile(
                                         title: Text(
-                                          "McDonald's",
+                                          "Olive + cheese",
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 25.0,
+                                              fontSize: 20.0,
                                               fontWeight: FontWeight.bold
                                           ),
                                         ),
@@ -300,7 +321,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           children: <Widget>[
                                             Expanded(
                                               child: Text(
-                                                "\$ 29.00",
+                                                "\$ 40.00",
                                                 style: TextStyle(
                                                     color: Colors.black,
                                                     fontSize: 20.0
@@ -308,7 +329,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               ),
                                             ),
                                             Expanded(
-                                              child: Text("·25-35 min",
+                                              child: Text("·35-45 min",
                                                 style: TextStyle(
                                                     color: Colors.grey,
                                                     fontSize: 15.0
@@ -322,7 +343,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Expanded(
                                       child: Container(
                                         margin: EdgeInsets.only(left:130, top: 0),
-                                        child: Text("⭐4.9",
+                                        child: Text("⭐3.5",
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 20.0,
@@ -350,8 +371,8 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Browser',
+            icon: Icon(Icons.delivery_dining_sharp),
+            label: 'Orders',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
