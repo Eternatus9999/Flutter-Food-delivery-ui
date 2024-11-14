@@ -34,9 +34,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  get onPressed => null;
-
-  get onChanged => null;
 
   String _dropdownvalue = "Panadura";
 
@@ -62,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         borderRadius: BorderRadius.circular(8.0),
                                       ),
                                     ),
-                                    onPressed: onPressed,
+                                    onPressed: null,
                                     child: Text("Delivery",
                                     style: TextStyle(
                                         color: Colors.white,
@@ -81,7 +78,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                         borderRadius: BorderRadius.circular(8.0),
                                       ),
                                     ),
-                                    onPressed: onPressed,
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => const Pickup()));
+                                    },
                                     child: Text("Pickup",
                                     style: TextStyle(
                                         color: Colors.black,
@@ -718,3 +719,133 @@ class Olive extends StatelessWidget {
     );
   }
 }
+
+class Pickup extends StatelessWidget{
+  const Pickup({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        child: Column(
+          children: [
+            Container(
+                margin: EdgeInsets.only(top: 50, left: 50, right: 50, bottom: 10),
+                child: Center(
+                    child: Row(
+                        children: <Widget>[
+                          const SizedBox(width: 30),
+                          Expanded(
+                              child: TextButton(
+                                  style:TextButton.styleFrom(
+                                    backgroundColor: Color.fromRGBO(200, 200, 200, 100),
+                                    padding: EdgeInsets.zero,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                      Navigator.pop(context);
+                                  },
+                                  child: Text("Delivery",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold
+                                      )))
+                          ) ,
+                          const SizedBox(width: 30)
+                          ,
+                          Expanded(
+                              child: TextButton(
+                                  style:TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                    backgroundColor: Colors.black,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                  ),
+                                  onPressed: null,
+                                  child: Text("Pickup",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold
+                                      )))
+                          ),
+                          const SizedBox(width: 30)
+                        ]
+                    )
+                )
+            ),
+            Container(
+              margin: EdgeInsets.only(left:20,right: 20, top:50),
+              child: Card(
+                elevation: 12,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                color: Colors.black,
+                child: Column(
+                  children: [
+                    ClipRRect(
+                      borderRadius: const BorderRadius.only(
+                        topRight: Radius.circular(20),
+                        topLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                      ),
+                      child: Image.asset(
+                        'assets/map.png',
+                        height: 500,
+                        fit: BoxFit.cover,
+                        width: double.infinity,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              child: Text(
+                "No pick-up Stores found",
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+            ),
+            Container(
+              child: Text(
+                "Select another area or order delivery insted",
+                style: TextStyle(
+                  fontSize: 17,
+                  color: Colors.black38,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.delivery_dining_sharp),
+            label: 'Orders',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Account',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
