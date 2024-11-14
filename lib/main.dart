@@ -727,7 +727,7 @@ class Pickup extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Column(
+        child: ListView(
           children: [
             Container(
                 margin: EdgeInsets.only(top: 50, left: 50, right: 50, bottom: 10),
