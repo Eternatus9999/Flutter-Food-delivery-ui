@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const Pepparoni(),
     );
   }
 }
@@ -210,152 +211,163 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Column(
                     children: [
                       Container(
-                        child: Card(
-                          margin: EdgeInsets.only(left:10,right: 10, top: 20),
-                          elevation: 12,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          color: Colors.white,
-                          child: Column(
-                            children: [
-                              ClipRRect(
-                                borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(20),
-                                  topLeft: Radius.circular(20),
-                                ),
-                                child: Image.asset(
-                                  'assets/pizza.png',
-                                  height: 220,
-                                  fit: BoxFit.cover,
-                                  width: double.infinity,
-                                ),
+                        child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const Pepparoni()),
+                              );
+                            },
+                            child: Card(
+                              margin: EdgeInsets.only(left:10,right: 10, top: 20),
+                              elevation: 12,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
                               ),
-                              Row(
-                                children: <Widget>[
-                                  Expanded(
-                                    child:  const ListTile(
-                                        title: Text(
-                                          "Pepparoni",
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 25.0,
-                                              fontWeight: FontWeight.bold
-                                          ),
-                                        ),
-                                        subtitle: Row(
-                                          children: <Widget>[
-                                            Expanded(
-                                              child: Text(
-                                                "\$ 15.00",
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 20.0
-                                                ),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              child: Text("·25-35 min",
-                                                style: TextStyle(
-                                                    color: Colors.grey,
-                                                    fontSize: 15.0
-                                                ),
-                                              ),
-                                            )
-                                          ],
-                                        )
+                              color: Colors.white,
+                              child: Column(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: const BorderRadius.only(
+                                      topRight: Radius.circular(20),
+                                      topLeft: Radius.circular(20),
+                                    ),
+                                    child: Image.asset(
+                                      'assets/pizza.png',
+                                      height: 220,
+                                      fit: BoxFit.cover,
+                                      width: double.infinity,
                                     ),
                                   ),
-                                  Expanded(
-                                      child: Container(
-                                        margin: EdgeInsets.only(left:130, top: 0),
-                                        child: Text("⭐4.9",
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.0,
-                                              fontWeight: FontWeight.bold
-                                          ),
+                                  Row(
+                                    children: <Widget>[
+                                      Expanded(
+                                        child:  const ListTile(
+                                            title: Text(
+                                              "Pepparoni",
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 25.0,
+                                                  fontWeight: FontWeight.bold
+                                              ),
+                                            ),
+                                            subtitle: Row(
+                                              children: <Widget>[
+                                                Expanded(
+                                                  child: Text(
+                                                    "\$ 15.00",
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 20.0
+                                                    ),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  child: Text("·25-35 min",
+                                                    style: TextStyle(
+                                                        color: Colors.grey,
+                                                        fontSize: 15.0
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            )
                                         ),
+                                      ),
+                                      Expanded(
+                                          child: Container(
+                                            margin: EdgeInsets.only(left:130, top: 0),
+                                            child: Text("⭐4.9",
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 20.0,
+                                                  fontWeight: FontWeight.bold
+                                              ),
+                                            ),
+                                          )
                                       )
+                                    ],
                                   )
                                 ],
-                              )
-                            ],
-                          ),
+                              ),
+                            ),
                         ),
                       ),
                       Container(
-                        child: Card(
-                          margin: EdgeInsets.only(left:10,right: 10, top: 20, bottom: 10),
-                          elevation: 12,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          color: Colors.white,
-                          child: Column(
-                            children: [
-                              ClipRRect(
-                                borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(20),
-                                  topLeft: Radius.circular(20),
-                                ),
-                                child: Image.asset(
-                                  'assets/pizza_2.png',
-                                  height: 220,
-                                  fit: BoxFit.cover,
-                                  width: double.infinity,
-                                ),
-                              ),
-                              Row(
-                                children: <Widget>[
-                                  Expanded(
-                                    child:  const ListTile(
-                                        title: Text(
-                                          "Olive + cheese",
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.0,
-                                              fontWeight: FontWeight.bold
-                                          ),
-                                        ),
-                                        subtitle: Row(
-                                          children: <Widget>[
-                                            Expanded(
-                                              child: Text(
-                                                "\$ 40.00",
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 20.0
-                                                ),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              child: Text("·35-45 min",
-                                                style: TextStyle(
-                                                    color: Colors.grey,
-                                                    fontSize: 15.0
-                                                ),
-                                              ),
-                                            )
-                                          ],
-                                        )
-                                    ),
+                        child: GestureDetector(
+                          onTap: (){},
+                          child: Card(
+                            margin: EdgeInsets.only(left:10,right: 10, top: 20, bottom: 10),
+                            elevation: 12,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            color: Colors.white,
+                            child: Column(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: const BorderRadius.only(
+                                    topRight: Radius.circular(20),
+                                    topLeft: Radius.circular(20),
                                   ),
-                                  Expanded(
-                                      child: Container(
-                                        margin: EdgeInsets.only(left:130, top: 0),
-                                        child: Text("⭐3.5",
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.0,
-                                              fontWeight: FontWeight.bold
+                                  child: Image.asset(
+                                    'assets/pizza_2.png',
+                                    height: 220,
+                                    fit: BoxFit.cover,
+                                    width: double.infinity,
+                                  ),
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Expanded(
+                                      child:  const ListTile(
+                                          title: Text(
+                                            "Olive + cheese",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold
+                                            ),
                                           ),
-                                        ),
-                                      )
-                                  )
-                                ],
-                              )
-                            ],
+                                          subtitle: Row(
+                                            children: <Widget>[
+                                              Expanded(
+                                                child: Text(
+                                                  "\$ 40.00",
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 20.0
+                                                  ),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Text("·35-45 min",
+                                                  style: TextStyle(
+                                                      color: Colors.grey,
+                                                      fontSize: 15.0
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          )
+                                      ),
+                                    ),
+                                    Expanded(
+                                        child: Container(
+                                          margin: EdgeInsets.only(left:130, top: 0),
+                                          child: Text("⭐3.5",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold
+                                            ),
+                                          ),
+                                        )
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -382,5 +394,127 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       );
+  }
+}
+
+class Pepparoni extends StatelessWidget {
+  const Pepparoni({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        child: ListView(
+          children: [
+            Container(
+              child: Image.asset(
+                'assets/pizza.png',
+                height: 220,
+                fit: BoxFit.cover,
+                width: double.infinity,
+                ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              child: Text(
+                "Pepparoni Pizza",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              child: Text(
+                "Famouse pepparoni pizza from America",
+                style: TextStyle(
+                    fontSize: 20
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              child: Row(
+                children: <Widget>[
+                  const SizedBox(width: 10),
+                  Expanded(
+                      child: Text(
+                          "🕒 25 - 35 min - delivery",
+                        style: TextStyle(
+                          fontSize: 15
+                        ),
+                      )
+                  ),
+                  Expanded(
+                      child: Text("4.9 ⭐ (400+) 5.9\$ Fee",
+                      style: TextStyle(
+                        fontSize: 18
+                      ),)
+                  ),
+                ],
+              )
+            ),
+            Container(
+              margin: EdgeInsets.all(20),
+                child: Text("Topings:",
+                  style: TextStyle(
+                      fontSize: 30
+                  ),)
+            ),
+            Container(
+              margin: EdgeInsets.only(left:40, top: 1),
+                child: Text("mozzarella cheese, pepperoni",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black54
+                  ),)
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20, right: 20, top: 50),
+              child: Card(
+                elevation: 12,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                color: Colors.black,
+                child: Column(
+                  children: [
+                    ClipRRect(
+                      borderRadius: const BorderRadius.only(
+                        topRight: Radius.circular(20),
+                        topLeft: Radius.circular(20),
+                      ),
+                      child: Image.asset(
+                        'assets/burger.png',
+                        height: 200,
+                        fit: BoxFit.cover,
+                        width: double.infinity,
+                      ),
+                    ),
+                    Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      child: TextButton(
+                        style: TextButton.styleFrom(
+                            backgroundColor: Colors.green),
+                        onPressed: () {},
+                        child: const Text(
+                          "Add to Cart",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        )
+      ),
+    );
   }
 }
