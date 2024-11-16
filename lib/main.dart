@@ -807,7 +807,7 @@ class Pickup extends StatelessWidget{
               ),
             ),
             Container(
-              margin: EdgeInsets.all(10),
+              margin: EdgeInsets.only(top:10, left:70),
               child: Text(
                 "No pick-up Stores found",
                 style: TextStyle(
@@ -817,6 +817,7 @@ class Pickup extends StatelessWidget{
               ),
             ),
             Container(
+              margin: EdgeInsets.only(left:30),
               child: Text(
                 "Select another area or order delivery insted",
                 style: TextStyle(
